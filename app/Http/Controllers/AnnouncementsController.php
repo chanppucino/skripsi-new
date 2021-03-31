@@ -77,9 +77,10 @@ class AnnouncementsController extends Controller
  
             $announcements->title=Input::get('title');
             $announcements->subject=Input::get('subject');
-            $announcements->image=$image;
+            $announcements->image=Input::get('subject');
             $announcements->contents=Input::get('contents');
             $announcements->save();
+
  
             Session::flash('message','Data Berhasil Ditambah');
  
@@ -162,10 +163,10 @@ class AnnouncementsController extends Controller
  
             $announcements->title=Input::get('title');
             $announcements->subject=Input::get('subject');
+            $announcements->image=Input::get('subject');
             $announcements->contents=Input::get('contents');
-            $announcements->image=$image;
             $announcements->save();
- 
+
             Session::flash('message','Data Berhasil Diubah');
              
             return Redirect::to('admin/announcements/index');
