@@ -32,15 +32,16 @@ Route::get('/admin', 'App\Http\Controllers\AdminController@index');
 |
 */
 Route::get('admin/announcements/index', 'App\Http\Controllers\AnnouncementsController@index')->name('announcements.index');
-Route::get('admin/announcements/{id}', 'App\Http\Controllers\AnnouncementsController@show')->name('announcements.show');
+Route::get('admin/announcements/{id}/show', 'App\Http\Controllers\AnnouncementsController@show')->name('announcements.show');
 
 Route::get('admin/announcements/create', 'App\Http\Controllers\AnnouncementsController@create')->name('announcements.create');
+Route::post('admin/announcements/store', 'App\Http\Controllers\AnnouncementsController@store')->name('announcements.store');
+
 Route::delete('admin/announcements/{id}', 'App\Http\Controllers\AnnouncementsController@destroy')->name('announcements.destroy');
 
 Route::get('admin/announcements/{id}/edit','App\Http\Controllers\AnnouncementsController@edit')->name('announcements.edit');
 Route::put('admin/announcements/{id}/update','App\Http\Controllers\AnnouncementsController@update')->name('announcements.update');
 
-Route::post('admin/announcements/store', 'App\Http\Controllers\AnnouncementsController@store')->name('announcements.store');
 
 /*
 |

@@ -24,7 +24,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <img src="{{ asset('announcementsImages/'.$announcements->image) }}"/>
+                            <img src="{{ asset('announcementsImages/'.$announcements['image']) }}"/>
                         </div>
                     </div>
                 </div>

@@ -77,7 +77,7 @@ class AnnouncementsController extends Controller
  
             $announcements->title=Input::get('title');
             $announcements->subject=Input::get('subject');
-            $announcements->image=Input::get('subject');
+            $announcements->image=Input::get('image');
             $announcements->contents=Input::get('contents');
             $announcements->save();
 
@@ -163,7 +163,7 @@ class AnnouncementsController extends Controller
  
             $announcements->title=Input::get('title');
             $announcements->subject=Input::get('subject');
-            $announcements->image=Input::get('subject');
+            $announcements->image=Input::get('image');
             $announcements->contents=Input::get('contents');
             $announcements->save();
 
