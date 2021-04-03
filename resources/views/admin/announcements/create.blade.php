@@ -29,7 +29,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     {{ Form::label('image', 'Gambar Pengumuman') }}
-                                    {{ Form::file('imageFile', ['class'=>'form-control']) }}        
+                                    {{ Form::file('image', ['class'=>'form-control']) }}        
                                 </div>
                             </div>
                         </div>

@@ -49,14 +49,14 @@ class AnnouncementsController extends Controller
         $rules =[
             'title'=>'required',
             'subject'=>'required',
-            'imageFile'=>'required|mimes:jpg,png,jpeg,JPG',
+            'image'=>'required|mimes:jpg,png,jpeg,JPG',
             'contents'=>'required'
         ];
  
         $pesan=[
             'title.required'=>'Judul Berita Tidak Boleh Kosong',
             'subject.required'=>'Perihal Tidak Boleh Kosong',
-            'imageFile.required'=>"Gambar Tidak Boleh Kosong",
+            'image.required'=>"Gambar Tidak Boleh Kosong",
             'contents.required'=>'Berita Tidak Boleh Kosong'
         ];
  
@@ -71,16 +71,16 @@ class AnnouncementsController extends Controller
  
         }else{
 
-            $image=$request->file('imageFile')->store('announcementsImages','public');
-             
+            $image=$request->file('image')->storeAs('announcementsImages', 'public');
+
             $announcements=new Announcements;
  
             $announcements->title=Input::get('title');
             $announcements->subject=Input::get('subject');
-            $announcements->image=Input::get('image');
+            $announcements->image=Input::file('image');
             $announcements->contents=Input::get('contents');
-            $announcements->save();
 
+            $announcements->save();
  
             Session::flash('message','Data Berhasil Ditambah');
  
@@ -152,18 +152,18 @@ class AnnouncementsController extends Controller
  
             $image="";
  
-            if (!$request->file('imageFile')) {
+            if (!$request->file('image')) {
                 # code...
                 $image=Input::get('imagePath');
             }else{
-                $image=$request->file('imageFile')->store('announcementsImages','public');                
+                $image=$request->file('image')->storeAs('announcementsImages','public');                
             }
  
             $announcements=Announcements::find($id);
  
             $announcements->title=Input::get('title');
             $announcements->subject=Input::get('subject');
-            $announcements->image=Input::get('image');
+            $announcements->image=Input::file('image');
             $announcements->contents=Input::get('contents');
             $announcements->save();
 

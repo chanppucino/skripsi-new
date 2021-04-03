@@ -32,7 +32,7 @@
                         <div class="form-group">
                             {{ Form::hidden('imagePath',$announcements['image'])}}
                             {{ Form::label('image', 'Image') }}
-                            {{ Form::file('imageFile', ['class'=>'form-control']) }}        
+                            {{ Form::file('image', ['class'=>'form-control']) }}        
                         </div>
                     </div>
                 </div>
